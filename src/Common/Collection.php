@@ -4,11 +4,16 @@ namespace kosuha606\Declarative\Common;
 
 class Collection
 {
-    private $items = [];
+    protected $items = [];
 
     public function add(CollectionItemInterface $item)
     {
         $this->items[$item->getId()] = $item;
+    }
+
+    public function get($id)
+    {
+        return $this->items[$id] ?? null;
     }
 
     /**
